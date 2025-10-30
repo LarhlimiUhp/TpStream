@@ -1,12 +1,4 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
-
-# explique document compplet
-
-Voici une explication complète du document affiché sur l’image, qui propose un exercice de gestion d’un magasin de vêtements en Java, en mobilisant l’API Streams.
-
-***
-
-# Exercice 3 : Gestion d'un magasin de vêtements avec Streams
+Gestion d'un magasin de vêtements avec Streams
 
 Ce TP s’adresse à des étudiants de 4e année IIR (EMSI) et vise à mettre en pratique la manipulation des flux de données (Streams) en Java à travers une application réaliste de gestion de stock en magasin de vêtements.
 
