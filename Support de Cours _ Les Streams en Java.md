@@ -1,6 +1,6 @@
 # Support de Cours : Les Streams en Java
 
-**Auteur :** Manus AI
+**Auteur :** A. LArhlimi
 **Date :** Novembre 2025
 
 ## I. Introduction aux Streams Java
