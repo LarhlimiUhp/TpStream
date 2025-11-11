@@ -1,7 +1,6 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
-# regenere le document complet, avec la correction des exercices,  au format Markdown
 
+#Support de Cours : Streams en Java (4ème année IIR – EMSI)
 ```markdown
 # Support de Cours : Streams en Java (4ème année IIR – EMSI)
 
