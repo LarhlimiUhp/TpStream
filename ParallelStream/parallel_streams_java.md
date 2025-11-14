@@ -17,6 +17,50 @@ int somme = nombres.stream()
 
 ### 1.2 Le Parallel Stream
 
+# principe de fonctionnement du Framework Fork/Join sur java
+
+Le framework Fork/Join en Java est conçu pour exécuter efficacement des tâches parallèles en les divisant récursivement en sous-tâches plus petites qui peuvent être exécutées simultanément. Le principe de fonctionnement repose sur deux éléments principaux :
+
+1. **Division des tâches (Fork)** : Une tâche complexe est divisée en plusieurs sous-tâches plus petites. Cette division récursive se poursuit jusqu'à ce que les sous-tâches soient suffisamment simples pour être traitées directement.
+2. **Combinaison des résultats (Join)** : Une fois que les sous-tâches sont exécutées, leurs résultats sont combinés pour produire le résultat final de la tâche initiale.
+
+Ce processus est géré par un pool de threads appelé `ForkJoinPool` qui orchestre l'exécution des tâches. Chaque tâche est représentée par une instance de `ForkJoinTask`, avec ses sous-classes `RecursiveTask<V>` (qui retourne un résultat) et `RecursiveAction` (qui ne retourne pas de résultat).
+
+Les deux méthodes essentielles pour le mécanisme sont :
+
+- `fork()`: pour lancer l'exécution asynchrone d'une sous-tâche.
+- `join()`: pour attendre et récupérer le résultat d'une sous-tâche.
+
+Le framework utilise aussi un algorithme de vol de travail ("work stealing"), où les threads qui terminent leurs tâches peuvent "voler" des tâches non terminées à d'autres threads, optimisant ainsi l'utilisation des ressources CPU.
+
+En résumé, le Fork/Join permet une parallélisation efficace des calculs lourds en divisant récursivement les tâches en unités plus petites et en combinant ensuite les résultats, utilisant un pool de threads pour limiter le nombre de threads actifs tout en maximisant la parallélisation.[^1][^5][^6][^7]
+<span style="display:none">[^10][^11][^2][^3][^4][^8][^9]</span>
+
+<div align="center">⁂</div>
+
+[^1]: https://blog.paumard.org/2011/07/05/java-7-fork-join/
+
+[^2]: https://www.baeldung.com/java-fork-join
+
+[^3]: https://www.reddit.com/r/java/comments/1kcz0df/introducing_forkjoin_data_structures/
+
+[^4]: https://fr.linkedin.com/advice/0/what-advantages-disadvantages-using-forkjoin-framework-parallel?lang=fr
+
+[^5]: https://toungafranck.com/tutoriels/les-nouveautes-java-8/traitement-des-donnees-en-parallele-et-performance/
+
+[^6]: https://www.geeksforgeeks.org/java/forkjoinpool-class-in-java-with-examples/
+
+[^7]: https://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html
+
+[^8]: https://www.programmez.com/tutoriels/forkjoin-bienvenue-dans-les-mondes-paralleles
+
+[^9]: https://blog.paumard.org/2011/10/26/parallel-arrays-1/
+
+[^10]: https://blog.octo.com/article-parallelisation-distribution-partie-3-comment-tirer-parti-des-processeurs-multi-coeurs-a-travers-l-api-de-concurrence-de-java-7
+
+[^11]: https://codegym.cc/fr/groups/posts/fr.271.mieux-ensemble-java-et-la-classe-thread-partie-v-executor-threadpool-forkjoin
+
+
 Un Parallel Stream divise les données en plusieurs segments et les traite simultanément sur différents threads, exploitant ainsi les processeurs multi-cœurs modernes. Cette approche peut significativement améliorer les performances pour les opérations coûteuses sur de grandes collections.
 
 **Création d'un Parallel Stream :**
